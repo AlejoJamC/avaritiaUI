@@ -2,6 +2,6 @@
 
 Simulador de crédito para banca personal (Interfaz de Usuario)
 
-Traducciones a otros idiomas:
+Traducciones:
 
-+ [English](README.md)
++ [English](../../../../README.md)
