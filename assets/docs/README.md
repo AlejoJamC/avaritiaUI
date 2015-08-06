@@ -6,4 +6,4 @@ Credit simulator for personal banking (User Interface)
 
 Language Translations:
 
-+ [Español](es/README.md)
++ [Español](translations/es/README.md)
