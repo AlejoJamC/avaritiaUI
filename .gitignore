@@ -1,7 +1,13 @@
-# Logs
-logs/
-*.log
-
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
-node_modules/
+node_modules
+
+#Global
+.DS_Store
+thumbs.db
+
+# Premium Template Wata
+# You can buy it on themeforest
+# http://themeforest.net/item/wata-material-design-multipurpose-template/11920960
+/public/wata/
+*.html
