@@ -1,0 +1,17 @@
+{
+  "devLocal":{
+    "port": 7000,
+    "webservice" : "http://localhost:6500/v0",
+    "bearer": "wGXpODnY4YIaxm6haWZiCnQEyu5wYDS6Vt0rRmiBG6NNdxizlLwzUl2SWfZDW47DmfMoQE2La8ZTFnZpUmMuS0B01BJjIKYD8GBNmeNZcJmlg3SQ3EpLWPfUUFcKkBiRPwqh1Sz1q5JCYn0i8TjxH8MFjC06YLNwwT6e8j7PsTvymBF1l0eHwltHul7SBwvG8woPEa5iXeV6RUjP7tL8YTHhlkULVzIogsGRycsn4JncPbDiMez18zagRRvRa9Y5"
+  },
+  "devServer": {
+    "port": 3500,
+    "webservice" : "http://localhost:3000/v0",
+    "bearer": "wGXpODnY4YIaxm6haWZiCnQEyu5wYDS6Vt0rRmiBG6NNdxizlLwzUl2SWfZDW47DmfMoQE2La8ZTFnZpUmMuS0B01BJjIKYD8GBNmeNZcJmlg3SQ3EpLWPfUUFcKkBiRPwqh1Sz1q5JCYn0i8TjxH8MFjC06YLNwwT6e8j7PsTvymBF1l0eHwltHul7SBwvG8woPEa5iXeV6RUjP7tL8YTHhlkULVzIogsGRycsn4JncPbDiMez18zagRRvRa9Y5"
+  },
+  "production": {
+    "port": 3500,
+    "webservice" : "http://localhost:3000/v0",
+    "bearer": "wGXpODnY4YIaxm6haWZiCnQEyu5wYDS6Vt0rRmiBG6NNdxizlLwzUl2SWfZDW47DmfMoQE2La8ZTFnZpUmMuS0B01BJjIKYD8GBNmeNZcJmlg3SQ3EpLWPfUUFcKkBiRPwqh1Sz1q5JCYn0i8TjxH8MFjC06YLNwwT6e8j7PsTvymBF1l0eHwltHul7SBwvG8woPEa5iXeV6RUjP7tL8YTHhlkULVzIogsGRycsn4JncPbDiMez18zagRRvRa9Y5"
+  }
+}
