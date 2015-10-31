@@ -11,3 +11,10 @@ thumbs.db
 # http://themeforest.net/item/wata-material-design-multipurpose-template/11920960
 /public/wata/
 *.html
+/public/ajax/
+/public/favicons/
+/public/images/
+/public/libs/
+/public/scripts/
+/public/styles/
+/public/favicon.ico
