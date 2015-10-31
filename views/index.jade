@@ -1,5 +1,170 @@
-extends layout
+include ./partials/head.jade
+body
 
-block content
-  h1= title
-  p Welcome to #{title}
+  #wrapper
+
+    // The preloader we see before the whole site is loaded
+    #preloader.valign-wrapper
+      .preloader-wrapper.big.active
+        .spinner-layer.spinner-blue-only.actually-black
+          .circle-clipper.left
+            .circle
+          .gap-patch
+            .circle
+          .circle-clipper.right
+            .circle
+
+    // A status spinner to indicate that some process is going on
+    #status
+      .preloader-wrapper.small.active
+        .spinner-layer.spinner-blue-only.actually-green
+          .circle-clipper.left
+            .circle
+          .gap-patch
+            .circle
+          .circle-clipper.right
+            .circle
+
+    // Navigation
+    include ./partials/navigation.jade
+
+    // Triangles section
+    #triangles.scrollspy
+      #output
+        .h1-wrapper.valign-wrapper
+          .container
+            .row
+              .col.s12
+                // Your company's slogan, feel free to add more tags here
+                h1
+          // Action button
+          a#explore.btn-floating.btn-large.waves-effect.waves-dark.green.accent-2
+            i.mdi-navigation-arrow-forward.indigo-text.text-darken-4
+
+    // Services section
+    #services.section.scrollspy
+      .container
+        .row
+          h2 Que es Avaritia?
+          .col.s12.m10.offset-m1.l8.offset-l2
+            p.flow-text.center-align
+              | We're a small local company focused on crafting special and precise products that really help in
+              | your everyday life. Feel free to check out our services and explore the gallery of our works.
+        // Row with service icons
+        .row.services
+          .col.s12.l3
+            i.fa.fa-5x.fa-paint-brush.animated-color
+            .divider
+            h5 Creative design
+            p
+              | Inspired by the latest trends of Material design, using cutting-edge technologies for a fresh and modern look. More design, all the time
+            a.btn.waves-effect.waves-dark.white.black-text Learn more
+          .col.s12.l3
+            i.fa.fa-5x.fa-desktop.animated-color
+            .divider
+            h5 Fits all screens
+            p
+              | Designed as a mobile-first application, the grid scales to fit even the largest monitors. The content always looks nice and balanced.
+            a.btn.waves-effect.waves-dark.white.black-text Discover
+          .col.s12.l3
+            i.fa.fa-5x.fa-cog.animated-color
+            .divider
+            h5 Easily customizable
+            p
+              | You are welcome to customize the elements to fit your needs. The proccess is simple and pleasant thanks for a Material color palette
+            a.btn.waves-effect.waves-dark.white.black-text Try it
+          .col.s12.l3
+            i.fa.fa-5x.fa-code.animated-color
+            .divider
+            h5 Carefully coded
+            p
+              | Beautiful on the outside and smart on the inside. Our code is clean, extremely readable and no trouble to modify or maintain.
+            a.btn.waves-effect.waves-dark.white.black-text Explore
+
+    .container
+      .divider
+
+    // Works section
+    #works.section.scrollspy
+      .container
+        .row
+          h2 Como funciona?
+          // Category filter buttons
+          .filter-options
+            a#all.btn-flat.waves-green-accent.waves-effect.active(data-group='all') Servicio Web
+            a.btn-flat.waves-green-accent.waves-effect(data-group='material') Administración
+            a.btn-flat.waves-green-accent.waves-effect(data-group='food') Interfaz Cliente
+
+    .container
+      .divider
+
+    // Subscribe section
+    #subscribe.section.grey-section.scrollspy
+      .container
+        .row
+          h2 Suscribirse
+          .col.s12.m10.offset-m1.l8.offset-l2
+            p.flow-text.center-align
+              | Don't miss our offers and receive some pro tips. We promise we won't spam you, unsubscribe
+              | anytime you want.
+        .row
+          .col.s8.offset-s2
+            // Begin MailChimp Signup Form
+            #mc_embed_signup
+              form#mc-embedded-subscribe-form.validate(action='//pimmey.us11.list-manage.com/subscribe/post?u=4131d254e34d85ebd3ba25ad3&id=302b5221bd', method='post', name='mc-embedded-subscribe-form', novalidate='')
+                #mc_embed_signup_scroll.input-field
+                  label(for='mce-EMAIL') Your email
+                  input#mce-EMAIL.email(type='email', name='EMAIL', required='')
+                  // real people should not fill this in and expect good things - do not remove this or risk form bot signups
+                  .cant-touch-this
+                    input(type='text', name='b_4131d254e34d85ebd3ba25ad3_302b5221bd', tabindex='-1', value='')
+                  .clear.center-align
+                    button#mc-embedded-subscribe.waves-effect.waves-light.btn-large.green.accent-2.indigo-text.text-darken-4(type='submit', name='subscribe')
+                      i.fa.fa-paper-plane.left
+                      | Suscribirse
+            // End mc_embed_signup
+
+    .container
+      .divider
+
+    // Contact form section
+    #contact.section.scrollspy
+      .container
+        .row
+          h2 Contacto
+          .col.s12.m10.offset-m1.l8.offset-l2
+            p.flow-text.center-align
+              | Let us know if you want to work on your project with us or just drop a line to say hello. We're
+              | always glad to receive your messages.
+            p.right-align
+              i.fa.fa-info-circle
+              |  Last name is not required.
+        .row
+          form#contact-form.col.s12.m12.l8.offset-l2(action='php/mailer.php', novalidate='')
+            // This field helps us avoid spam bots, don't remove it
+            .cant-touch-this
+              input(type='text', name='hammertime', tabindex='-1', value='')
+            // End of anti-spam field
+            .row
+              .input-field.col.s6
+                input#first-name.required(name='first-name', type='text')
+                label(for='first-name') First name
+              .input-field.col.s6
+                input#last-name(name='last-name', type='text')
+                label(for='last-name') Last name
+            .row
+              .input-field.col.s12
+                input#email.required(name='email', type='email')
+                label(for='email') Email
+            .row
+              .input-field.col.s12
+                textarea#message.materialize-textarea.required(name='message')
+                label(for='message') Message
+            .center-align
+              button.btn-large.disabled(type='submit', name='send')
+                | Send
+    // Footer
+    include ./partials/footer.jade
+
+  // Scripts
+  include ./partials/scripts.jade
