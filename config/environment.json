@@ -2,16 +2,16 @@
   "devLocal":{
     "port": 7000,
     "webservice" : "http://localhost:6500/v0",
-    "bearer": "wGXpODnY4YIaxm6haWZiCnQEyu5wYDS6Vt0rRmiBG6NNdxizlLwzUl2SWfZDW47DmfMoQE2La8ZTFnZpUmMuS0B01BJjIKYD8GBNmeNZcJmlg3SQ3EpLWPfUUFcKkBiRPwqh1Sz1q5JCYn0i8TjxH8MFjC06YLNwwT6e8j7PsTvymBF1l0eHwltHul7SBwvG8woPEa5iXeV6RUjP7tL8YTHhlkULVzIogsGRycsn4JncPbDiMez18zagRRvRa9Y5"
+    "bearer": "UEOVovv2Ij0sH1dhJI9j9MOWL88buwdKWanTyVfVAWfyrfYSOzTRNXOLIFjUJAwJ9R5axyCrWPllzSZxhHUI6FjNF1rDnnZsDSH7RBVTqaj0E6i3Fiy4sRVy3bDjmOXHaSnFKR0RDADCjtcA60BOeLlRebWEV2PhUiQpL7LONfuzUDekR9RXuS3VvAL4K0soZ14Yzhx8BLpntcek7TjuxgLIlr3vYYgfbhj9vZTn1jbdHiVcsinPR612kf38yUCP"
   },
   "devServer": {
     "port": 3500,
     "webservice" : "http://localhost:3000/v0",
-    "bearer": "wGXpODnY4YIaxm6haWZiCnQEyu5wYDS6Vt0rRmiBG6NNdxizlLwzUl2SWfZDW47DmfMoQE2La8ZTFnZpUmMuS0B01BJjIKYD8GBNmeNZcJmlg3SQ3EpLWPfUUFcKkBiRPwqh1Sz1q5JCYn0i8TjxH8MFjC06YLNwwT6e8j7PsTvymBF1l0eHwltHul7SBwvG8woPEa5iXeV6RUjP7tL8YTHhlkULVzIogsGRycsn4JncPbDiMez18zagRRvRa9Y5"
+    "bearer": "UEOVovv2Ij0sH1dhJI9j9MOWL88buwdKWanTyVfVAWfyrfYSOzTRNXOLIFjUJAwJ9R5axyCrWPllzSZxhHUI6FjNF1rDnnZsDSH7RBVTqaj0E6i3Fiy4sRVy3bDjmOXHaSnFKR0RDADCjtcA60BOeLlRebWEV2PhUiQpL7LONfuzUDekR9RXuS3VvAL4K0soZ14Yzhx8BLpntcek7TjuxgLIlr3vYYgfbhj9vZTn1jbdHiVcsinPR612kf38yUCP"
   },
   "production": {
     "port": 3500,
     "webservice" : "http://localhost:3000/v0",
-    "bearer": "wGXpODnY4YIaxm6haWZiCnQEyu5wYDS6Vt0rRmiBG6NNdxizlLwzUl2SWfZDW47DmfMoQE2La8ZTFnZpUmMuS0B01BJjIKYD8GBNmeNZcJmlg3SQ3EpLWPfUUFcKkBiRPwqh1Sz1q5JCYn0i8TjxH8MFjC06YLNwwT6e8j7PsTvymBF1l0eHwltHul7SBwvG8woPEa5iXeV6RUjP7tL8YTHhlkULVzIogsGRycsn4JncPbDiMez18zagRRvRa9Y5"
+    "bearer": "UEOVovv2Ij0sH1dhJI9j9MOWL88buwdKWanTyVfVAWfyrfYSOzTRNXOLIFjUJAwJ9R5axyCrWPllzSZxhHUI6FjNF1rDnnZsDSH7RBVTqaj0E6i3Fiy4sRVy3bDjmOXHaSnFKR0RDADCjtcA60BOeLlRebWEV2PhUiQpL7LONfuzUDekR9RXuS3VvAL4K0soZ14Yzhx8BLpntcek7TjuxgLIlr3vYYgfbhj9vZTn1jbdHiVcsinPR612kf38yUCP"
   }
 }
