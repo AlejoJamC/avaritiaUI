@@ -15,4 +15,31 @@ routerIndex.get('/', function (req, res) {
   res.render('index', { title: 'Avaritia | Simulador de crédito para banca personal.' });
 });
 
+routerIndex.post('/contacto', function (req, res) {
+  var options = {
+    'url' : global.WEBSERVICE + '/contacts',
+    'auth':{
+      'bearer' : global.BEARERTOKEN
+    },
+    'form':{
+      'name': req.body.txtname,
+      'lastname': req.body.txtlastname,
+      'email': req.body.txtemail,
+      'message': req.body.txtmessage
+    }
+  };
+
+  request.post(options, function (error, response, body) {
+    if( !error && response.statusCode == 200){
+      var info = JSON.parse(body);
+      // TODO: imprimir el mensaje error
+      res.render('index', {
+        title: 'Avaritia | Simulador de crédito para banca personal.',
+        error: false,
+        messageContact: info.message
+      });
+    }
+  });
+});
+
 module.exports = routerIndex;
