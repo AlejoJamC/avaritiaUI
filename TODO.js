@@ -10,3 +10,6 @@
 // Partials
 // head
 // TODO: internacionalizacion usando i18n-node or i18n-2
+
+// contact
+// TODO: enviar el post del boton de contacto por ajax
