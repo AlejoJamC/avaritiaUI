@@ -1,0 +1,24 @@
+#subscribe.section.grey-section.scrollspy
+    .container
+        .row
+            h2 Suscribirse
+            .col.s12.m10.offset-m1.l8.offset-l2
+                p.flow-text.center-align
+                    | Don't miss our offers and receive some pro tips. We promise we won't spam you, unsubscribe
+                    | anytime you want.
+        .row
+            .col.s8.offset-s2
+                // Begin MailChimp Signup Form
+                #mc_embed_signup
+                    form#mc-embedded-subscribe-form.validate(action='//pimmey.us11.list-manage.com/subscribe/post?u=4131d254e34d85ebd3ba25ad3&id=302b5221bd', method='post', name='mc-embedded-subscribe-form', novalidate='')
+                        #mc_embed_signup_scroll.input-field
+                            label(for='mce-EMAIL') Your email
+                            input#mce-EMAIL.email(type='email', name='EMAIL', required='')
+                            // real people should not fill this in and expect good things - do not remove this or risk form bot signups
+                            .cant-touch-this
+                                input(type='text', name='b_4131d254e34d85ebd3ba25ad3_302b5221bd', tabindex='-1', value='')
+                            .clear.center-align
+                                button#mc-embedded-subscribe.waves-effect.waves-light.btn-large.green.accent-2.indigo-text.text-darken-4(type='submit', name='subscribe')
+                                    i.fa.fa-paper-plane.left
+                                    | Suscribirse
+                // End mc_embed_signup

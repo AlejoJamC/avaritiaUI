@@ -1,0 +1,35 @@
+#contact.section.scrollspy
+    .container
+        .row
+            h2 Contacto
+            .col.s12.m10.offset-m1.l8.offset-l2
+                p.flow-text.center-align
+                    | Dejenos saber si le interesa el proyecto, desea contribuir o simplemente quiere decir hola!.
+                    | Estaremos encantados de recibir sus mensajes.
+                p.right-align
+                    i.fa.fa-info-circle
+                    |  Todos los campos son requeridos.
+        .row
+            form#contact-form.col.s12.m12.l8.offset-l2(action='contacto', novalidate='' method='post')
+                // This field helps us avoid spam bots, don't remove it
+                .cant-touch-this
+                    input(type='text', name='hammertime', tabindex='-1', value='')
+                // End of anti-spam field
+                .row
+                    .input-field.col.s6
+                        input#first-name.required(name='txtname', type='text')
+                        label(for='txtname') Nombre
+                    .input-field.col.s6
+                        input#last-name.required(name='txtlastname', type='text')
+                        label(for='txtlastname') Apellido
+                .row
+                    .input-field.col.s12
+                        input#email.required(name='txtemail', type='email')
+                        label(for='txtemail') Email
+                .row
+                    .input-field.col.s12
+                        textarea#message.materialize-textarea.required(name='txtmessage')
+                        label(for='txtmessage') Mensaje
+                .center-align
+                    button.btn-large.disabled(type='submit', name='btnsendcontact')
+                        | Enviar
