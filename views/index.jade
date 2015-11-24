@@ -32,11 +32,80 @@ body
     #triangles.scrollspy
       #output
         .h1-wrapper.valign-wrapper
+
+          // EMPIEZA LA CALCULADORA
           .container
             .row
               .col.s12
-                // Your company's slogan, feel free to add more tags here
-                h1
+                // TITULO DE LA CALCULADORA
+                .container
+                  .row
+                    h3.h3-alter Metodos de simulación
+                    p.flow-text.center-align.no-margin
+                      | Este simulador te permite identificar el valor de la cuota que debes pagar cada mes, según el monto que deseas prestar y el plazo que fijes.
+                    p.right-align.no-margin-minor
+                      i.fa.fa-info-circle
+                      |  Todos los campos son requeridos.
+                // TITULO DE LA CALCULADORA
+                // Simulator options
+                .row
+                  .filter-options
+                    ul.tabs
+                      li.tab.col.s4
+                        a.btn-flat.waves-effect.waves-light.active(href='#calcular-cuota', data-toggle='tab') Cuota
+                      li.tab.col.s4
+                        a.btn-flat.waves-effect.waves-light(href='#calcular-plazo', data-toggle='tab') Plazo
+                      li.tab.col.s4
+                        a.btn-flat.waves-effect.waves-light(href='#calcular-monto', data-toggle='tab') Monto
+                    br
+                    form#form-cuota.col.s12.m12.l8.offset-l2(action='/simular', novalidate='')
+                      #calcular-cuota.col.s12
+                        .row
+                          .input-field.col.s12.m6.div-alter
+                            // Select rate
+                            select#cbxtasa(name='cbxtasa')
+                              option(value='', disabled='', selected='') Escoja una opción
+                              option(value='1') Tasa fija
+                              option(value='2') Tasa variable
+                            label.label-alter(for='cbxtasa') Seleccione la tasa del prestamo
+                            // Select rate
+                          .input-field.col.s12.m6.div-alter
+                            // Select service
+                            select#cbxservicio(name='cbxservicio')
+                              option(value='', disabled='', selected='') Escoja una opción
+                              option(value='1') Credito con pignoración de pensiones
+                              option(value='2') Credito personal
+                              option(value='2') Prestanomina
+                            label.label-alter(for='cbxservicio') Seleccione un servicio
+                            // Select service
+                        .row
+                          .input-field.col.s4.div-alter
+                            input#txtingresosmensuales.textarea-alter.required.validate(name='txtingresosmensuales', type='text')
+                            label.label-alter(for='txtingresosmensuales') Ingresos mensuales
+                          .input-field.col.s4.div-alter
+                            input#txtvalorprestamo.textarea-alter(name='txtvalorprestamo', type='text')
+                            label.label-alter(for='txtvalorprestamo') Valor prestamo
+                          .input-field.col.s4.div-alter
+                            input#txtvalormeses.textarea-alter(name='txtvalormeses', type='text')
+                            label.label-alter(for='txtvalormeses') Cantidad de meses
+                        .center-align
+                          button.btn-large.disabled(type='submit', name='btn-calcular-cuota')
+                            | Calcular cuota
+                    form#form-plazo.col.s12.m12.l8.offset-l2(action='php/mailer.php', novalidate='')
+                      #calcular-plazo.col.s12
+                        | Plazo
+                        .center-align
+                          button.btn-large.disabled(type='submit', name='btn-calcular-plazo')
+                            | Calcular plazo
+                    form#form-monto.col.s12.m12.l8.offset-l2(action='php/mailer.php', novalidate='')
+                      #calcular-monto.col.s12
+                        | Monto
+                        .center-align
+                          button.btn-large.disabled(type='submit', name='btn-calcular-monto')
+                            | Calcular monto
+          // FIN DE LA CALCULADORA
+
+
           // Action button
           a#explore.btn-floating.btn-large.waves-effect.waves-dark.green.accent-2
             i.mdi-navigation-arrow-forward.indigo-text.text-darken-4
