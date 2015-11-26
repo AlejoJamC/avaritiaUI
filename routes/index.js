@@ -15,6 +15,7 @@ routerIndex.get('/', function (req, res) {
   res.render('index', { title: 'Avaritia | Simulador de crédito para banca personal.' });
 });
 
+/* POST Contact form. */
 routerIndex.post('/contacto', function (req, res) {
   var options = {
     'url' : global.WEBSERVICE + '/contacts',
