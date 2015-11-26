@@ -10,7 +10,6 @@ thumbs.db
 # You can buy it on themeforest
 # http://themeforest.net/item/wata-material-design-multipurpose-template/11920960
 /public/wata/
-*.html
 /public/ajax/
 /public/favicons/
 /public/images/
