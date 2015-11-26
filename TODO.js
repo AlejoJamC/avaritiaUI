@@ -13,3 +13,7 @@
 
 // contact
 // TODO: enviar el post del boton de contacto por ajax
+
+// Embed form
+// TODO: reubicar los javascript a las carpetas correspondientes y agregar la refencia permanente
+// TODO: evitar la carga de js y/o css desde los repositorios de internet (CDN)
