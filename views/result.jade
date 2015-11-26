@@ -1,0 +1,157 @@
+include ./partials/head
+body
+
+  #wrapper
+
+    // The preloader we see before the whole site is loaded
+    #preloader.valign-wrapper
+      .preloader-wrapper.big.active
+        .spinner-layer.spinner-blue-only.actually-black
+          .circle-clipper.left
+            .circle
+          .gap-patch
+            .circle
+          .circle-clipper.right
+            .circle
+
+    // A status spinner to indicate that some process is going on
+    #status
+      .preloader-wrapper.small.active
+        .spinner-layer.spinner-blue-only.actually-green
+          .circle-clipper.left
+            .circle
+          .gap-patch
+            .circle
+          .circle-clipper.right
+            .circle
+
+    // Navigation
+    include ./partials/navigation
+
+    // Triangles section hidden
+    #triangles.scrollspy
+      #output
+        .h1-wrapper.valign-wrapper
+          .container
+            .row
+              .col.s12
+                // Your company's slogan, feel free to add more tags here
+                h1 Muchas gracias por usar Avaritia
+          // Action button
+          a#explore.btn-floating.btn-large.waves-effect.waves-dark.green.accent-2
+            i.mdi-navigation-arrow-forward.indigo-text.text-darken-4
+
+    // Result section
+    #result.section.scrollspy
+      .container
+        .row
+          h2 Resultados de esta simulacion
+          .col.s12.m10.offset-m1.l8.offset-l2
+            p.flow-text.center-align
+              | Las cifras que se presentan en Avaritia son de caracter informativo,las operaciones que se simulan en esta aplicación
+              | son sólo referenciales y no comprometen al sitio ni a un banco en particular. Gracias.
+        // RESULT TABLE
+        .row
+          table.striped.bordered
+            thead
+              tr
+                th(data-field='cuota') Cuota #
+                th(data-field='valor') Valor Cuota
+                th(data-field='interes') Intereses
+                th(data-field='capital') Capital
+                th(data-field='saldo') Saldo Capital
+            tbody
+              tr
+                td 1
+                td $55.913
+                td $25.000
+                td $30.913
+                td $969.087
+              tr
+                td 2
+                td $55.913
+                td $24.227
+                td $31.686
+                td $937.402
+              tr
+                td 3
+                td $55.913
+                td $23.435
+                td $32.478
+                td $904.924
+              tr
+                td 4
+                td $55.913
+                td $22.623
+                td $33.290
+                td $871.634
+              tr
+                td 5
+                td $55.913
+                td $21.791
+                td $34.122
+                td $837.512
+              tr
+                td 6
+                td $55.913
+                td $20.938
+                td $34.975
+                td $802.537
+              tr
+                td 7
+                td $55.913
+                td $20.063
+                td $35.849
+                td $766.688
+              tr
+                td 8
+                td $55.913
+                td $19.167
+                td $36.746
+                td $729.942
+              tr
+                td 9
+                td $55.913
+                td $18.249
+                td $37.664
+                td $692.278
+              tr
+                td 10
+                td $55.913
+                td $17.307
+                td $38.606
+                td $653.672
+              tr
+                td 11
+                td $55.913
+                td $16.342
+                td $39.571
+                td $614.101
+              tr
+                td 12
+                td $55.913
+                td $1.364
+                td $54.219
+                td $0
+
+
+    // Services section
+    include ./partials/services
+
+    .container
+      .divider
+
+    // Works section
+    include ./partials/works
+
+    .container
+      .divider
+
+    // Contact form section
+    include ./partials/contact
+
+    // Footer
+    include ./partials/footer
+
+  // Scripts
+  include ./partials/scriptsResult
