@@ -49,40 +49,7 @@ body
                 // TITULO DE LA CALCULADORA
                 // Simulator options
                 .row
-                  #calcular-cuota.col.s12
-                    form#form-cuota.col.s12.m12.l8.offset-l2(action='/simular#result', novalidate='' method='post')
-                      .row
-                        .input-field.col.s12.m6.div-alter
-                          // Select rate
-                          select#cbxtasa(name='cbxtasa')
-                            option(value='', disabled='', selected='') Escoja una opción
-                            option(value='1') Tasa fija
-                            option(value='2') Tasa variable
-                          label.label-alter(for='cbxtasa') Seleccione la tasa del prestamo
-                          // Select rate
-                        .input-field.col.s12.m6.div-alter
-                          // Select service
-                          select#cbxservicio(name='cbxservicio')
-                            option(value='', disabled='', selected='') Escoja una opción
-                            option(value='1') Credito con pignoración de pensiones
-                            option(value='2') Credito personal
-                            option(value='2') Prestanomina
-                          label.label-alter(for='cbxservicio') Seleccione un servicio
-                          // Select service
-                      .row
-                        .input-field.col.s4.div-alter
-                          input#txtingresosmensuales.textarea-alter.required.validate(type='text', name='txtingresosmensuales')
-                          label.label-alter(for='txtingresosmensuales') Ingresos mensuales
-                        .input-field.col.s4.div-alter
-                          input#txtvalorprestamo.textarea-alter(type='text', name='txtvalorprestamo')
-                          label.label-alter(for='txtvalorprestamo') Valor prestamo
-                        .input-field.col.s4.div-alter
-                          input#txtvalormeses.textarea-alter(type='number', name='txtvalormeses')
-                          label.label-alter(for='txtvalormeses') Cantidad de meses
-                      .center-align
-                        button.btn-large(type='submit', name='btn-calcular-cuota')
-                          | Calcular cuota
-
+                  iframe#formSimulator.iframe-alter(name='formSimulator', src='../embed/formSimulator.html', frameborder='0', border='0', cellspacing='0', width='100%', height='100%')
           // FIN DE LA CALCULADORA
 
 
