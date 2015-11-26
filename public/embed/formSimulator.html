@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+        <style>
+            .textarea-alter{
+                color: white;
+            }
+            label.label-alter {
+                color: #ffffff !important;
+            }
+            textarea:focus.textarea-alter {
+                border-bottom: 1px solid #ffffff;
+                box-shadow:0 1px 0 0 #ffffff;
+                -webkit-box-shadow: 0 1px 0 0 #ffffff;
+                -moz-box-shadow: 0 1px 0 0 #ffffff;
+            }
+            input.select-dropdown{
+                color:white;
+            }
+
+            @media only screen and (max-width: 1300px) {
+                h3.h3-alter {
+                    margin-bottom: 35px;
+                    font-size: 51px;
+                    letter-spacing: 3px;
+                }
+                p.no-margin {
+                    font-size: 1.3rem;
+                    margin: 0;
+                }
+                p.no-margin-minor {
+                    font-size: 1.1rem;
+                    margin: 0;
+                }
+            }
+            @media screen and (max-device-width:640px), screen and (max-width:640px) {
+                h3.h3-alter {
+                    margin-bottom: 20px;
+                    font-size: 30px;!important;
+                    letter-spacing: 3px;
+                }
+                p.no-margin {
+                    font-size: 1.1rem;
+                    margin: 0;
+                }
+                p.no-margin-minor {
+                    font-size: 0.9rem;
+                    margin: 0;
+                }
+            }
+        </style>
+        <title></title>
+    </head>
+    <body style="background-color: transparent;">
+        <div id="calcular-cuota" class="col s12">
+            <form class="col s12 m12 l8 offset-l2" target='_parent' method="post" action="/simular#result" id="form-cuota" novalidate>
+                <div class="row">
+                    <div class="input-field col s12 m6 div-alter">
+                        <!-- Select rate -->
+                        <select  id="cbxtasa" name="cbxtasa" class="selectpicker">
+                            <option value="" disabled selected>Escoja una opción</option>
+                            <option value="1">Tasa fija</option>
+                            <option value="2">Tasa variable</option>
+                        </select>
+                        <!-- Select rate -->
+                    </div>
+                    <div class="input-field col s12 m6 div-alter">
+                        <!-- Select service -->
+                        <select  id="cbxservicio" name="cbxservicio" class="selectpicker">
+                            <option value="" disabled selected>Escoja una opción</option>
+                            <option value="1">Credito con pignoración de pensiones</option>
+                            <option value="2">Credito personal</option>
+                            <option value="2">Prestanomina</option>
+                        </select>
+                        <!-- Select service -->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m4 div-alter">
+                        <input type="text" class="textarea-alter required validate" id="txtingresosmensuales"
+                               name="txtingresosmensuales">
+                        <label class="label-alter" for="txtingresosmensuales">Ingresos mensuales</label>
+                    </div>
+                    <div class="input-field col s12 m4 div-alter">
+                        <input type="text" class="textarea-alter" id="txtvalorprestamo" name="txtvalorprestamo">
+                        <label class="label-alter" for="txtvalorprestamo">Valor prestamo</label>
+                    </div>
+                    <div class="input-field col s12 m4 div-alter">
+                        <input type="number" class="textarea-alter" id="txtvalormeses" name="txtvalormeses">
+                        <label class="label-alter" for="txtvalormeses">Cantidad de meses</label>
+                    </div>
+                </div>
+                <div class="center-align">
+                    <button type="submit" name="btn-calcular-cuota" class="btn-large">
+                        Calcular cuota
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- Compiled and minified JavaScript -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+        <script type="text/javascript" src="jquery.maskMoney.js"></script>
+        <script type="text/javascript" src="jquery.jstepper.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $('select').material_select();
+            });
+            // > ----------
+            // Mascara para CUOTA
+            // Ingresos mensuales
+            $('#txtingresosmensuales').maskMoney({
+                prefix:'$ ',
+                allowNegative: false,
+                thousands:'.',
+                decimal:',',
+                precision: 0,
+                allowZero: false,
+                affixesStay: false
+            });
+
+            // Valor prestamo
+            $('#txtvalorprestamo').maskMoney({
+                prefix:'$ ',
+                allowNegative: false,
+                thousands:'.',
+                decimal:',',
+                precision: 0,
+                allowZero: false,
+                affixesStay: false
+            });
+
+            // Cantidad de meses
+            $('#txtvalormeses').jStepper({
+                minValue:12,
+                maxValue:60,
+                minLength:2
+            });
+            // > ----------
+
+
+        </script>
+    </body>
+</html>
