@@ -49,60 +49,40 @@ body
                 // TITULO DE LA CALCULADORA
                 // Simulator options
                 .row
-                  .filter-options
-                    ul.tabs
-                      li.tab.col.s4
-                        a.btn-flat.waves-effect.waves-light.active(href='#calcular-cuota', data-toggle='tab') Cuota
-                      li.tab.col.s4
-                        a.btn-flat.waves-effect.waves-light(href='#calcular-plazo', data-toggle='tab') Plazo
-                      li.tab.col.s4
-                        a.btn-flat.waves-effect.waves-light(href='#calcular-monto', data-toggle='tab') Monto
-                    br
-                    form#form-cuota.col.s12.m12.l8.offset-l2(action='/simular', novalidate='')
-                      #calcular-cuota.col.s12
-                        .row
-                          .input-field.col.s12.m6.div-alter
-                            // Select rate
-                            select#cbxtasa(name='cbxtasa')
-                              option(value='', disabled='', selected='') Escoja una opción
-                              option(value='1') Tasa fija
-                              option(value='2') Tasa variable
-                            label.label-alter(for='cbxtasa') Seleccione la tasa del prestamo
-                            // Select rate
-                          .input-field.col.s12.m6.div-alter
-                            // Select service
-                            select#cbxservicio(name='cbxservicio')
-                              option(value='', disabled='', selected='') Escoja una opción
-                              option(value='1') Credito con pignoración de pensiones
-                              option(value='2') Credito personal
-                              option(value='2') Prestanomina
-                            label.label-alter(for='cbxservicio') Seleccione un servicio
-                            // Select service
-                        .row
-                          .input-field.col.s4.div-alter
-                            input#txtingresosmensuales.textarea-alter.required.validate(name='txtingresosmensuales', type='text')
-                            label.label-alter(for='txtingresosmensuales') Ingresos mensuales
-                          .input-field.col.s4.div-alter
-                            input#txtvalorprestamo.textarea-alter(name='txtvalorprestamo', type='text')
-                            label.label-alter(for='txtvalorprestamo') Valor prestamo
-                          .input-field.col.s4.div-alter
-                            input#txtvalormeses.textarea-alter(name='txtvalormeses', type='text')
-                            label.label-alter(for='txtvalormeses') Cantidad de meses
-                        .center-align
-                          button.btn-large.disabled(type='submit', name='btn-calcular-cuota')
-                            | Calcular cuota
-                    form#form-plazo.col.s12.m12.l8.offset-l2(action='php/mailer.php', novalidate='')
-                      #calcular-plazo.col.s12
-                        | Plazo
-                        .center-align
-                          button.btn-large.disabled(type='submit', name='btn-calcular-plazo')
-                            | Calcular plazo
-                    form#form-monto.col.s12.m12.l8.offset-l2(action='php/mailer.php', novalidate='')
-                      #calcular-monto.col.s12
-                        | Monto
-                        .center-align
-                          button.btn-large.disabled(type='submit', name='btn-calcular-monto')
-                            | Calcular monto
+                  #calcular-cuota.col.s12
+                    form#form-cuota.col.s12.m12.l8.offset-l2(action='/simular#result', novalidate='' method='post')
+                      .row
+                        .input-field.col.s12.m6.div-alter
+                          // Select rate
+                          select#cbxtasa(name='cbxtasa')
+                            option(value='', disabled='', selected='') Escoja una opción
+                            option(value='1') Tasa fija
+                            option(value='2') Tasa variable
+                          label.label-alter(for='cbxtasa') Seleccione la tasa del prestamo
+                          // Select rate
+                        .input-field.col.s12.m6.div-alter
+                          // Select service
+                          select#cbxservicio(name='cbxservicio')
+                            option(value='', disabled='', selected='') Escoja una opción
+                            option(value='1') Credito con pignoración de pensiones
+                            option(value='2') Credito personal
+                            option(value='2') Prestanomina
+                          label.label-alter(for='cbxservicio') Seleccione un servicio
+                          // Select service
+                      .row
+                        .input-field.col.s4.div-alter
+                          input#txtingresosmensuales.textarea-alter.required.validate(type='text', name='txtingresosmensuales')
+                          label.label-alter(for='txtingresosmensuales') Ingresos mensuales
+                        .input-field.col.s4.div-alter
+                          input#txtvalorprestamo.textarea-alter(type='text', name='txtvalorprestamo')
+                          label.label-alter(for='txtvalorprestamo') Valor prestamo
+                        .input-field.col.s4.div-alter
+                          input#txtvalormeses.textarea-alter(type='number', name='txtvalormeses')
+                          label.label-alter(for='txtvalormeses') Cantidad de meses
+                      .center-align
+                        button.btn-large(type='submit', name='btn-calcular-cuota')
+                          | Calcular cuota
+
           // FIN DE LA CALCULADORA
 
 
@@ -118,12 +98,6 @@ body
 
     // Works section
     include ./partials/works
-
-    .container
-      .divider
-
-    // Subscribe section
-    include ./partials/suscribe
 
     .container
       .divider
