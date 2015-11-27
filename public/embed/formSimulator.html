@@ -62,25 +62,27 @@
     </head>
     <body style="background-color: transparent;">
         <div id="calcular-cuota" class="col s12">
-            <form class="col s12 m12 l8 offset-l2" target='_parent' method="post    " action="/simular#result" id="form-cuota" novalidate>
+            <form class="col s12 m12 l8 offset-l2" target='_parent' method="post" action="/simular#result" id="form-cuota" novalidate>
                 <div class="row">
                     <div class="input-field col s12 m6 div-alter">
                         <!-- Select rate -->
                         <select  id="cbxtasa" name="cbxtasa" class="selectpicker">
-                            <option value="" disabled selected>Escoja una opción</option>
+                            <option value="" disabled selected>Escoja un tipo de tasa</option>
                             <option value="1">Tasa fija</option>
                             <option value="2">Tasa variable</option>
                         </select>
+                        <input id="txttasa" name="txttasa" type="hidden" value="" />
                         <!-- Select rate -->
                     </div>
                     <div class="input-field col s12 m6 div-alter">
                         <!-- Select service -->
                         <select  id="cbxservicio" name="cbxservicio" class="selectpicker">
-                            <option value="" disabled selected>Escoja una opción</option>
+                            <option value="" disabled selected>Escoja un servicio</option>
                             <option value="1">Credito con pignoración de pensiones</option>
                             <option value="2">Credito personal</option>
                             <option value="2">Prestanomina</option>
                         </select>
+                        <input id="txtservicio" name="txtservicio" type="hidden" value="" />
                         <!-- Select service -->
                     </div>
                 </div>
@@ -113,6 +115,18 @@
         <script type="text/javascript" src="jquery.jstepper.min.js"></script>
 
         <script>
+            // Asignar el valor del option al input
+            $("#cbxtasa").change(function() {
+                var $value = $(this).val();
+                var $title = $(this).children('option[value='+$value+']').html();
+                $('input#txttasa').val($title);
+            });
+            $("#cbxservicio").change(function() {
+                var $value = $(this).val();
+                var $title = $(this).children('option[value='+$value+']').html();
+                $('input#txtservicio').val($title);
+            });
+            // Cargar el select
             $(document).ready(function() {
                 $('select').material_select();
             });
