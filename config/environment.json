@@ -11,7 +11,7 @@
   },
   "production": {
     "port": 3500,
-    "webservice" : "http://localhost:3000/v0",
+    "webservice" : "http://api.avaritia.alejojamc.com/v1",
     "bearer": "YyyK8lV1e7XLoZ7pjIltVn3maKN7BGE0xhfJ20HpSFpegtKoMeQbJTFtIuEr6AfUTZwgwij7Qc5epQNlDgf6YqmURBuSoNuQDfmegQPTsRTbl16mhB0KAboevQzvIyTGMnAsmgfYha9QX3aEymEThOc2nZp1i3TgnOSv72RM4SKJ5ZdzOzgRQQpAcTXW7fEjQb5g4QTMQEbz3hq41NC8IqUs1O4LLluyyYj8F5MwIRHWQqLJeNVJqvemjDBMSn0i"
   }
 }

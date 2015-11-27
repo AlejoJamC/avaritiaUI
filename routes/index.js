@@ -74,6 +74,8 @@ routerIndex.post('/simular', function (req, res) {
   console.log(tasames);
   console.log(textotasa);
   console.log(textoservicio);
+  console.log(global.WEBSERVICE + '/banks');
+  console.log(global.BEARERTOKEN);
 
   // Get the list of all banks, with rate type and service selected
   var options = {
@@ -99,7 +101,8 @@ routerIndex.post('/simular', function (req, res) {
         idtasa: tipotasa,
         textoservicio: textoservicio,
         idservicio: tiposervicio,
-        tokentemp: global.BEARERTOKEN
+        tokentemp: global.BEARERTOKEN,
+        urlAPI: global.WEBSERVICE
       });
     }
   });
