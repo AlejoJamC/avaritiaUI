@@ -58,7 +58,7 @@ body
               br
               | Ingresos Mensuales: $ !{ingresos}
               br
-              | Valor del prestamo: $ !{prestamo}
+              | Valor del prestamo: $ !{noprestamo}
               br
               | Cantidad de meses: !{meses}
             p(style='text-align:justify; line-height: 100%; font-size:16px;').flow-text.center-align
@@ -207,12 +207,19 @@ body
 
       var a = $(this).parent();
       console.log($(a[0]).attr('id'));
-
+      var idbanco = $(a[0]).attr('id');
       // Ajax cargar datos de la tabla
       $.ajax({
-        url: "http://localhost:6500/v0/languages",
+        url: "http://localhost:6500/v0/simulations",
         dataType: 'json',
-        data: {},
+        method: 'post',
+        data: {
+            'prestamo': !{prestamo},
+            'meses': !{meses},
+            'idBanco': idbanco,
+            'idServicio': '!{idservicio}',
+            'idTasa': '!{idtasa}'
+        },
         success: function (data, status) {
           return console.log("The returned data", data);
         },

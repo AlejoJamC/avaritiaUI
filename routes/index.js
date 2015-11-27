@@ -92,10 +92,13 @@ routerIndex.post('/simular', function (req, res) {
         error: false,
         banks: banks,
         ingresos: noingresos,
-        prestamo: noprestamo,
+        noprestamo: noprestamo,
+        prestamo: prestamo,
         meses: meses,
         textotasa: textotasa,
+        idtasa: tipotasa,
         textoservicio: textoservicio,
+        idservicio: tiposervicio,
         tokentemp: global.BEARERTOKEN
       });
     }
