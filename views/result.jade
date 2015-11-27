@@ -75,7 +75,7 @@ body
               .collapsible-body
                 .container
                   .row
-                    table.striped.bordered
+                    table(id='tabla' +  item._id ).striped.bordered
                       thead
                         tr
                           th(data-field='cuota') Cuota #
@@ -83,94 +83,6 @@ body
                           th(data-field='interes') Intereses
                           th(data-field='capital') Capital
                           th(data-field='saldo') Saldo Capital
-                      tbody
-
-        br
-        // RESULT TABLE
-        .row
-          table.striped.bordered
-            thead
-              tr
-                th(data-field='cuota') Cuota #
-                th(data-field='valor') Valor Cuota
-                th(data-field='interes') Intereses
-                th(data-field='capital') Capital
-                th(data-field='saldo') Saldo Capital
-            tbody
-              tr
-                td 1
-                td $55.913
-                td $25.000
-                td $30.913
-                td $969.087
-              tr
-                td 2
-                td $55.913
-                td $24.227
-                td $31.686
-                td $937.402
-              tr
-                td 3
-                td $55.913
-                td $23.435
-                td $32.478
-                td $904.924
-              tr
-                td 4
-                td $55.913
-                td $22.623
-                td $33.290
-                td $871.634
-              tr
-                td 5
-                td $55.913
-                td $21.791
-                td $34.122
-                td $837.512
-              tr
-                td 6
-                td $55.913
-                td $20.938
-                td $34.975
-                td $802.537
-              tr
-                td 7
-                td $55.913
-                td $20.063
-                td $35.849
-                td $766.688
-              tr
-                td 8
-                td $55.913
-                td $19.167
-                td $36.746
-                td $729.942
-              tr
-                td 9
-                td $55.913
-                td $18.249
-                td $37.664
-                td $692.278
-              tr
-                td 10
-                td $55.913
-                td $17.307
-                td $38.606
-                td $653.672
-              tr
-                td 11
-                td $55.913
-                td $16.342
-                td $39.571
-                td $614.101
-              tr
-                td 12
-                td $55.913
-                td $1.364
-                td $54.219
-                td $0
-
-
     // Services section
     include ./partials/services
 
@@ -210,18 +122,26 @@ body
       var idbanco = $(a[0]).attr('id');
       // Ajax cargar datos de la tabla
       $.ajax({
-        url: "http://localhost:6500/v0/simulations",
+        url: "!{urlAPI}/simulations",
         dataType: 'json',
-        method: 'post',
+        method: 'POST',
         data: {
-            'prestamo': !{prestamo},
-            'meses': !{meses},
-            'idBanco': idbanco,
-            'idServicio': '!{idservicio}',
-            'idTasa': '!{idtasa}'
+            prestamo: !{prestamo},
+            meses: !{meses},
+            idBanco: idbanco,
+            idServicio: '!{idservicio}',
+            idTasa: '!{idtasa}'
         },
         success: function (data, status) {
-          return console.log("The returned data", data);
+          //return console.log("The returned data", data);
+          var trHTML = '';
+          $.each(data, function (i, item) {
+            trHTML += '<tr><td>' + item.cuotanum + '</td><td>' + item.cuotafija + '</td><td>' + item.intereses +
+                    '</td><td>' + item.capital + '</td><td>' + item.saldo + '</td></tr>';
+          });
+          $('#tabla'+idbanco + ' > tbody').html("");
+          $('#tabla'+idbanco).append(trHTML);
+
         },
         crossDomain: true,
         beforeSend: function (xhr, settings) {
