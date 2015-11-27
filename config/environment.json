@@ -12,6 +12,6 @@
   "production": {
     "port": 3500,
     "webservice" : "http://localhost:3000/v0",
-    "bearer": "UEOVovv2Ij0sH1dhJI9j9MOWL88buwdKWanTyVfVAWfyrfYSOzTRNXOLIFjUJAwJ9R5axyCrWPllzSZxhHUI6FjNF1rDnnZsDSH7RBVTqaj0E6i3Fiy4sRVy3bDjmOXHaSnFKR0RDADCjtcA60BOeLlRebWEV2PhUiQpL7LONfuzUDekR9RXuS3VvAL4K0soZ14Yzhx8BLpntcek7TjuxgLIlr3vYYgfbhj9vZTn1jbdHiVcsinPR612kf38yUCP"
+    "bearer": "YyyK8lV1e7XLoZ7pjIltVn3maKN7BGE0xhfJ20HpSFpegtKoMeQbJTFtIuEr6AfUTZwgwij7Qc5epQNlDgf6YqmURBuSoNuQDfmegQPTsRTbl16mhB0KAboevQzvIyTGMnAsmgfYha9QX3aEymEThOc2nZp1i3TgnOSv72RM4SKJ5ZdzOzgRQQpAcTXW7fEjQb5g4QTMQEbz3hq41NC8IqUs1O4LLluyyYj8F5MwIRHWQqLJeNVJqvemjDBMSn0i"
   }
 }
