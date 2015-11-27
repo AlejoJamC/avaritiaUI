@@ -55,8 +55,8 @@ app.use(session({
   saveUninitialized: true,
   secret: '3f1l 4 73g 0t d33n yll43r u s1ht d43r n4c u f1' }));
 // Parser del contenido en el body
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 // TODO: arreglar la carga de archivos con multer [2]
 // Manejador de multipart/form-data para cargar archivos
 //app.use(multer());
