@@ -48,8 +48,44 @@ body
           h2 Resultados de esta simulacion
           .col.s12.m10.offset-m1.l8.offset-l2
             p.flow-text.center-align
+              a(href='/') Volver a calcular
+            p.flow-text.center-align
+              | Condiciones de la simulación:
+              br
+              | Tipo de tasa: !{textotasa}
+              br
+              | Servicio: !{textoservicio}
+              br
+              | Ingresos Mensuales: $ !{ingresos}
+              br
+              | Valor del prestamo: $ !{prestamo}
+              br
+              | Cantidad de meses: !{meses}
+            p(style='text-align:justify; line-height: 100%; font-size:16px;').flow-text.center-align
+              b(style="color: red") Advertencia:&nbsp;
               | Las cifras que se presentan en Avaritia son de caracter informativo,las operaciones que se simulan en esta aplicación
               | son sólo referenciales y no comprometen al sitio ni a un banco en particular. Gracias.
+        // RESULT LIST OF BANKS
+        ul#bankList.collapsible.popout(data-collapsible='accordion')
+          - each item in banks
+            li(id=item._id)
+              .collapsible-header
+                i.material-icons business
+                | !{item.name}
+              .collapsible-body
+                .container
+                  .row
+                    table.striped.bordered
+                      thead
+                        tr
+                          th(data-field='cuota') Cuota #
+                          th(data-field='valor') Valor Cuota
+                          th(data-field='interes') Intereses
+                          th(data-field='capital') Capital
+                          th(data-field='saldo') Saldo Capital
+                      tbody
+
+        br
         // RESULT TABLE
         .row
           table.striped.bordered
@@ -154,4 +190,36 @@ body
     include ./partials/footer
 
   // Scripts
-  include ./partials/scriptsResult
+  include ./partials/scripts
+  script.
+    // Render collapsible
+    $(document).ready(function () {
+      $('.collapsible').collapsible({
+        accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+      });
+    });
+    // Load Ajax every collapsible
+    $('body').on('click', '.collapsible-header', function (event) {
+      console.log('click en el collapsible');
+
+      var target = event.target.nodeName;
+      console.log(target);
+
+      var a = $(this).parent();
+      console.log($(a[0]).attr('id'));
+
+      // Ajax cargar datos de la tabla
+      $.ajax({
+        url: "http://localhost:6500/v0/languages",
+        dataType: 'json',
+        data: {},
+        success: function (data, status) {
+          return console.log("The returned data", data);
+        },
+        crossDomain: true,
+        beforeSend: function (xhr, settings) {
+          xhr.setRequestHeader('Authorization', 'Bearer !{tokentemp}');
+        }
+      });
+    });
+
